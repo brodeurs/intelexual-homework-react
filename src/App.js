@@ -1,6 +1,14 @@
 import React from 'react';
 import Tabs from "./components/Tabs";
 import './App.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+import Projects from './Projects';
 
 function App() {
     return (
@@ -8,7 +16,9 @@ function App() {
             <h1>Intelexual Assignment</h1>
             <Tabs>
                 <div label="Projects">
-                    Project list goes <em>here</em>!
+                    <Router>
+                        <Projects />
+                    </Router>
                 </div>
                 <div label="Users">
                     User list goes <em>here</em>!
