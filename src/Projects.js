@@ -1,8 +1,15 @@
 import React, { useState, useEffect }  from 'react';
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
+
 const Projects = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [projects, setProjects] = useState([]);
+
+    const {state} = useLocation();
+
+
     useEffect(() => {
         fetch("http://localhost:8080/projects/")
             .then(res => res.json())
@@ -17,6 +24,7 @@ const Projects = () => {
                 }
             )
     }, [])
+
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -27,7 +35,8 @@ const Projects = () => {
                 {projects.map(project => (
                     <li key={project.id}>
                         <span>{project.name}</span><br/>
-                        <span>{project.startDate}</span>
+                        <span>{project.startDate}</span><br/>
+                        <Link to="/projectDetails" state={{ project: project }}>Project Details</Link>
                     </li>
                 ))}
             </ul>
