@@ -7,9 +7,6 @@ const Projects = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [projects, setProjects] = useState([]);
 
-    const {state} = useLocation();
-
-
     useEffect(() => {
         fetch("http://localhost:8080/projects/")
             .then(res => res.json())

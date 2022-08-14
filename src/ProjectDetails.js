@@ -10,12 +10,11 @@ const ProjectDetails = () => {
     let {state} = useLocation()
     let navigate = useNavigate()
 
-    console.log("ProjectDetails props: " + JSON.stringify(state))
     return (
         <div>
             <h1>Project Details</h1>
             <div>
-                <button onClick={() => navigate("/", { state : { replace : true }})}>Back</button>
+                <button onClick={() => navigate("/")}>Back</button>
             </div>
             <Tabs>
                 <div label="Users">
