@@ -10,6 +10,12 @@ const ProjectDetails = () => {
     let {state} = useLocation()
     let navigate = useNavigate()
 
+    let {users} = state.project;
+    let {files} = state.project;
+
+    let userList = {users : users}
+    let fileList = {files : files}
+
     return (
         <div>
             <h1>Project Details</h1>
@@ -18,10 +24,10 @@ const ProjectDetails = () => {
             </div>
             <Tabs>
                 <div label="Users">
-                        <Users props={state}/>
+                        <Users props={userList}/>
                 </div>
                 <div label="Files">
-                        <Files props={state}/>
+                        <Files props={fileList}/>
                 </div>
             </Tabs>
         </div>
