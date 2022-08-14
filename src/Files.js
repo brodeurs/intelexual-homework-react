@@ -6,7 +6,6 @@ const Files = (props) => {
 
     return (
         <div>
-            <h1>Files Details</h1>
             <ul>
                 {files.map(file => (
                     <li key={file.id}>

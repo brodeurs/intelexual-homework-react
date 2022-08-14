@@ -7,7 +7,6 @@ const Users = (props) => {
     return (
 
         <div>
-            <h1>User Details</h1>
             <ul>
                 {users.map(user => (
                     <li key={user.id}>

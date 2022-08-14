@@ -11,10 +11,12 @@
 }
 
 .tab-list-active {
+    font-weight: bold;
   background-color: white;
   border: solid #ccc;
     border-width: 1px 1px 0 1px;
 }
+
 
 ul li span {
     display: inline-block;

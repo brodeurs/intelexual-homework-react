@@ -23,10 +23,11 @@ const ProjectDetails = () => {
                 <button onClick={() => navigate("/")}>Back</button>
             </div>
             <Tabs>
-                <div label="Users">
+                <div label="Users" >
                         <Users props={userList}/>
                 </div>
-                <div label="Files">
+                <h2>File Details</h2>
+                <div label="Files" >
                         <Files props={fileList}/>
                 </div>
             </Tabs>

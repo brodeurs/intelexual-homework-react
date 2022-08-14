@@ -28,15 +28,18 @@ const Projects = () => {
         return <div>Loading...</div>;
     } else {
         return (
-            <ul>
-                {projects.map(project => (
-                    <li key={project.id}>
-                        <span>{project.name}</span><br/>
-                        <span>{project.startDate}</span><br/>
-                        <Link to="/projectDetails" state={{ project: project }}>Project Details</Link>
-                    </li>
-                ))}
-            </ul>
+            <div>
+                <h2>Project List</h2>
+                <ul>
+                    {projects.map(project => (
+                        <li key={project.id}>
+                            <span>{project.name}</span><br/>
+                            <span>{project.startDate}</span><br/>
+                            <Link to="/projectDetails" state={{ project: project }}>Project Details</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         );
     }
 }
