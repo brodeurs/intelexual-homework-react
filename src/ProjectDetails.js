@@ -1,20 +1,19 @@
 import React, { useState, useEffect }  from 'react';
 import {useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Tabs from './components/Tabs';
 import Users from './Users';
 import Files from './Files';
 
 const ProjectDetails = () => {
 
+    const {id} = useParams();
+
     let {state} = useLocation()
+    console.log("ProjectDetails state: " + JSON.stringify(state));
+
     let navigate = useNavigate()
-
-    let {users} = state.project;
-    let {files} = state.project;
-
-    let userList = {users : users}
-    let fileList = {files : files}
 
     return (
         <div>
@@ -24,11 +23,11 @@ const ProjectDetails = () => {
             </div>
             <Tabs>
                 <div label="Users" >
-                        <Users props={userList}/>
+                        <Users props={state}/>
                 </div>
                 <h2>File Details</h2>
                 <div label="Files" >
-                        <Files props={fileList}/>
+                        <Files props={state}/>
                 </div>
             </Tabs>
         </div>
