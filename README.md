@@ -46,3 +46,4 @@ npm install prop-types --save
 npm install react-table
 npm add bootstrap
 npm add reactstrap
+npm install @babel/core@7.10.0

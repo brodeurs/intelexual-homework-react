@@ -1,7 +1,6 @@
 import React from "react"
 import { useTable } from "react-table"
 import { Table } from 'reactstrap';
-import {useSortBy} from "react-table/src/plugin-hooks/useSortBy";
 
 const ProjectsTable = ({ columns, data }) => {
     const {
