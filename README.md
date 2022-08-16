@@ -1,43 +1,16 @@
-# Getting Started with Create React App
+## ProjectsReactApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### function or class?
+My research over the last couple of years shows that the React community appears to be heading toward function implementation. Of course, I've leaned toward class implementation because it seems more object-oriented to me. It's clear that transpiled React code with class implementation generates more javascript than function implementations, so I've moved more toward functions. However, a LOT of React documentation shows class implementations, requiring conversion. Oh well.
 
-## Available Scripts
+### Basic implementation
+1. All tables use useEffect hooks to call the Spring Boot Projects microservice
+2. All table views use react-table to render their respective view
+3. Sort hooks have been added to all view tables, but only sort loaded data.
+4. TBD: Paging, Filtering using calls to Projects microservice
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Testing
+I failed to write a single test due to my React beginner level. Disturbing.
 
 ### Installed packages
 

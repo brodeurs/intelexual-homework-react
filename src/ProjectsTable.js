@@ -1,5 +1,5 @@
 import React from "react"
-import { useTable } from "react-table"
+import { useTable, useSortBy } from "react-table"
 import { Table } from 'reactstrap';
 
 const ProjectsTable = ({ columns, data }) => {
@@ -13,8 +13,12 @@ const ProjectsTable = ({ columns, data }) => {
         columns,
         data,
     },
-        //useSortBy
+        useSortBy
     )
+
+    const generateSortingIndicator = column => {
+        return column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""
+    }
 
     return (
         // If you're curious what props we get as a result of calling our getter functions (getTableProps(), getRowProps())
@@ -24,7 +28,8 @@ const ProjectsTable = ({ columns, data }) => {
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map(column => (
-                        <th {...column.getHeaderProps()}>{column.render("Header")}
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render("Header")}
+                            {generateSortingIndicator(column)}
                         </th>
                     ))}
                 </tr>
@@ -45,6 +50,7 @@ const ProjectsTable = ({ columns, data }) => {
             </tbody>
         </Table>
     )
+
 }
 
 export default ProjectsTable;

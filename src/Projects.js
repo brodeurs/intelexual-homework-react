@@ -14,15 +14,18 @@ const Projects = () => {
             {
                 Header: "Name",
                 accessor: "name",
+                disableSortBy: false,
             },
             {
                 Header: "Start Date",
                 accessor: "startDate",
+                disableSortBy: false,
             },
             {
                 Header: "Details",
                 accessor: "id",
                 Cell: ({row}) => (<Link to="/projectDetails" state={{id : row.values.id}}>{row.values.id}</Link>),
+                disableSortBy: true,
             },
         ],
         []
@@ -55,18 +58,6 @@ const Projects = () => {
         return <div>Loading...</div>;
     } else {
         return (
-            // <div>
-            //     <h2>Project List</h2>
-            //     <ul>
-            //         {projects.map(project => (
-            //             <li key={project.id}>
-            //                 <span>{project.name}</span><br/>
-            //                 <span>{project.startDate}</span><br/>
-            //                 <Link to="/projectDetails" state={{ project: project }}>Project Details</Link>
-            //             </li>
-            //         ))}
-            //     </ul>
-            // </div>
             <ProjectsTable  columns={columns} data={projects}/>
         );
     }
